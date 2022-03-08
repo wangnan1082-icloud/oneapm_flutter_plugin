@@ -1,0 +1,40 @@
+# Xcode
+#
+## Build generated
+build/
+DerivedData/
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+
+#flutter 默认 ignore
+.DS_Store
+.dart_tool/
+
+.packages
+.pub/
+pubspec.lock
+
+build/
+
+.idea/workspace.xml
+.idea
+## Directory-based project format:
+.idea/
+
+gradle/
+gradlew
+gradlew.bat
+*.iml
+
+# CocoaPods
+#
+Carthage/Build
