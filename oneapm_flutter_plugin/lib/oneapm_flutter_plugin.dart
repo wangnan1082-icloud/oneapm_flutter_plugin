@@ -1,4 +1,3 @@
-
 import 'dart:async';
 
 import 'package:flutter/services.dart';
@@ -13,7 +12,8 @@ class OneapmFlutterPlugin {
   }
 
   /// 返回版本号
-  static Future<Map<String, dynamic>?> getSDKVersion() async {
-    return await _channel.invokeMapMethod<String, dynamic>("getSDKVersion");
+  static Future<String?> get getSDKVersion async {
+    final String? sdkVersion = await _channel.invokeMethod('getSDKVersion');
+    return sdkVersion;
   }
 }
