@@ -1,7 +1,8 @@
 name: oneapm_flutter_plugin
-description: A new flutter plugin project.
+description: Flutter Plugin For OneAPM SDK, is used for calling OneAPM API in flutter.
 version: 0.0.1
-homepage:
+author: wangnan <wangnan1082@icloud.com>
+homepage: https://github.com/wangnan1082-icloud/oneapm_flutter_plugin
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
