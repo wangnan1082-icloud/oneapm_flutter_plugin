@@ -62,7 +62,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Plugin example app'),
+          title: const Text('OneAPM Plugin example'),
         ),
         body: ListView(
           children: <Widget>[
@@ -73,15 +73,48 @@ class _MyAppState extends State<MyApp> {
             ListTile(
               leading: Icon(Icons.account_circle),
               title: Text('获取版本号： $_sdkVersion\n '),
-              onTap: () {
-                dynamic s = OneapmFlutterPlugin.getSDKVersion;
+              onTap: () async {
+                dynamic s = await OneapmFlutterPlugin.getSDKVersion;
                 print('OneapmFlutterPlugin.getSDKVersion22: $s');
-
-                //('传入你们服务端分配给用户的登录 ID');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.account_circle_sharp),
+              title: Text('设置用户名\n '),
+              onTap: () async {
+                dynamic s =
+                    await OneapmFlutterPlugin.setUserName("TestUserName");
+                print('OneapmFlutterPlugin.setUserName: $s');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.event_available),
+              title: Text('设置Host地址 为 7.13\n '),
+              onTap: () async {
+                dynamic s = await OneapmFlutterPlugin.setHostAndPortAndSecurity(
+                    "10.128.7.13", "38081", "0");
+                print('OneapmFlutterPlugin.setHostAndPortAndSecurity: $s');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.event_available_sharp),
+              title: Text('设置Token 为 爱奇艺\n '),
+              onTap: () async {
+                dynamic s = await OneapmFlutterPlugin.startWithApplicationToken(
+                    "b50c882b-193f-4711-9a0f-998bb97fc412");
+                print('OneapmFlutterPlugin.startWithApplicationToken: $s');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.event),
+              title: Text('设置Action\n '),
+              onTap: () async {
+                dynamic s = await OneapmFlutterPlugin.setCustomAction(
+                    "viewNameStr", "actionNameStr");
+                print('OneapmFlutterPlugin.setCustomAction: $s');
               },
             ),
           ],
-          // child: Text('Running on: $_platformVersion\n'),
         ),
       ),
     );
